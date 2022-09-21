@@ -9,19 +9,20 @@ import com.sena.manda2.R
 
 class Pantalla1 : AppCompatActivity() {
 
-    var imageViewGoToRegister: ImageView? = null
+    var volver: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantalla1)
 
-            imageViewGoToRegister = findViewById(R.id.imageview_go_to_register)
-            imageViewGoToRegister?.setOnClickListener { goToRegister() }
-        }
-
-        private fun goToRegister() {
-            val i = Intent(this, RegisterActivity::class.java)
-            startActivity(i)
+        volver = findViewById(R.id.delvolver)
+        volver?.setOnClickListener { MainActivity() }
 
     }
+
+    private fun MainActivity() {
+        val i = Intent(this, MainActivity::class.java)
+        startActivity(i)
+    }
+
 }
