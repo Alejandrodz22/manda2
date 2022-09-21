@@ -9,32 +9,24 @@ import com.sena.manda2.R
 
 class MainActivity : AppCompatActivity() {
 
-    var imageViewGoToRegister: ImageView? = null
-    var buttonViewGoToLogin: Button? = null
-
-
+    var buttonViewGoToRegister: Button? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        imageViewGoToRegister = findViewById(R.id.imageview_go_to_register)
-        imageViewGoToRegister?.setOnClickListener { goToRegister() }
+        buttonViewGoToRegister = findViewById(R.id.registrate)
+        buttonViewGoToRegister?.setOnClickListener { goToRegister() }
 
-
-        buttonViewGoToLogin= findViewById(R.id.inicio_sesion)
-        buttonViewGoToLogin?.setOnClickListener {Pantalla1()}
-
+    }
+    private fun RegisterActivity() {
+        val i = Intent(this, RegisterActivity::class.java)
+        startActivity(i)
     }
 
     private fun goToRegister() {
         val i = Intent(this, RegisterActivity::class.java)
-            startActivity(i)
-    }
-
-    private fun Pantalla1() {
-        val i = Intent(this, Pantalla1::class.java)
         startActivity(i)
     }
 
